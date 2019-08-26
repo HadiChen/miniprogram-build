@@ -22,7 +22,6 @@
     "ddv-cms": "0.4",
     "ddv-multi-window": "^0.1.11",
     "ddv-restful-api": "^0.4.13",
-    "ddv-restful-ws-api": "~0.1.1",
     "ddv-ui": "~0.1.0",
     "ddv-upload-api": "~0.0.8",
     "ddv-util": "^0.0.14",
