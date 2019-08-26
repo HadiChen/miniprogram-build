@@ -1,0 +1,14 @@
+{
+  "presets": [["es2015", { "modules": false }], "@vue/babel-preset-jsx"],
+  "plugins": [
+    [
+      "component",
+      [
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-default"
+        }
+      ]
+    ]
+  ]
+}
