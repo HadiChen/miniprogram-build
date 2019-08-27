@@ -394,6 +394,7 @@ export default {
         const dist = Math.ceil(needScrollTop / 10)
         _currentY += dist
         window.scrollTo(0, currentY)
+
         if (needScrollTop > 10 || needScrollTop < -10) {
           this.scrollAnimation(_currentY, targetY)
         } else {

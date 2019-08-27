@@ -57,9 +57,18 @@
               <div class="goods-list__item--close" @click="delGoods(i)">
                 <i class="el-icon-close"></i>
               </div>
-              <div class="goods-list__item--text">
-                {{item.goodsName}}
-              </div>
+              <el-tooltip
+                effect="dark"
+                :disabled="drag"
+                placement="top">
+                <div slot="content">
+                  {{item.goodsName}}<br/>
+                  {{item.keywords}}
+                </div>
+                <div class="goods-list__item--text">
+                  {{item.goodsName}}
+                </div>
+              </el-tooltip>
             </div>
           </transition-group>
         </draggable>
@@ -238,6 +247,7 @@ export default {
       get () {
         return this.handleList.map(item => ({
           goodsName: `${item.brandName || ''} ${item.goodsNumber || ''}`,
+          keywords: item.keywords,
           goodsId: item.goodsId
         }))
       },
