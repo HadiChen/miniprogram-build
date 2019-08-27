@@ -360,6 +360,9 @@ export default {
           }
       }
     },
+    getNode (node) {
+      return Array.isArray(node) ? node[0] : node
+    },
     clooseModule (viewType, i) {
       let data = this.modulesData(viewType)
       data.id = this.createModuleId()
@@ -376,7 +379,27 @@ export default {
         this.lists.splice(pustIndex, 0, data)
       }
 
+      this.$nextTick(() => {
+        let rect = this.getNode(this.$refs.pageViews.$refs[data.id]).getBoundingClientRect()
+        let el = this.$refs.pageViews.$el
+        this.scrollAnimation(el.scrollTop, rect.top - el.getBoundingClientRect().top)
+      })
+
       this.visible = false
+    },
+    scrollAnimation (currentY, targetY) {
+      let needScrollTop = targetY - currentY
+      let _currentY = currentY
+      setTimeout(() => {
+        const dist = Math.ceil(needScrollTop / 10)
+        _currentY += dist
+        window.scrollTo(0, currentY)
+        if (needScrollTop > 10 || needScrollTop < -10) {
+          this.scrollAnimation(_currentY, targetY)
+        } else {
+          window.scrollTo(0, targetY)
+        }
+      }, 1)
     },
     /**
      * @param i {number} 下标，数据范围 -1 to Array.length

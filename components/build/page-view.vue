@@ -13,6 +13,7 @@
         <layouts
           v-for="(item, i) in list"
           :key="item.id"
+          :ref="item.id"
           class="relative"
           :margin-bottom="item.marginBottom"
           :content-bg-color="item.contentBgColor"
