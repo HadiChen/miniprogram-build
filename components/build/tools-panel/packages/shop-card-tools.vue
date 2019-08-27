@@ -9,6 +9,9 @@
           <el-form-item label="店铺:">
             <span class="f12 text-info">{{scope.row.data.shopName || ''}}</span>
           </el-form-item>
+          <el-form-item label="logo:">
+            <image-upload v-model="scope.row.data.logo"/>
+          </el-form-item>
           <el-form-item label="标题:">
             <el-input
               class="input"
@@ -62,6 +65,7 @@
 import BaseTools from './common/base-tools'
 import ListWrap from './common/list-wrap'
 import ShopList from '@/components/build/data/shop/shop-list'
+import ImageUpload from '@/components/image-upload/index'
 var shopLists = []
 
 export default {
@@ -84,6 +88,7 @@ export default {
   components: {
     BaseTools,
     ShopList,
+    ImageUpload,
     ListWrap
   },
   computed: {

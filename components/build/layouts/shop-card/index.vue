@@ -15,10 +15,10 @@
           :key="item.shopId">
           <div class="shop-card__item">
             <div class="shop-card__image">
-              <img
+              <el-image
                 :src="item.logo + '?x-oss-process=image/resize,w_116/quality,q_90'"
                 v-if="item.logo"
-                mode="aspectFill"/>
+                fit="cover"/>
             </div>
             <div class="shop-card__text shop-card__text--title">
               {{item.title}}
@@ -96,7 +96,7 @@ export default {
   overflow: hidden;
   margin: 16px auto 8px;
 }
-.shop-card__image image {
+.shop-card__image img {
   width: 100%;
   height: 100%;
   display: block;
