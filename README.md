@@ -16,5 +16,3 @@ $ npm start
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 ```
-
-![demo](http://2.img.sic.wiki//upload/other/62d9c1575F0b92744242E9D582.jpg)
